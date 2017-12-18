@@ -1,0 +1,34 @@
+<mat-tab-group dynamicHeight="true">
+  <mat-tab *ngFor='let tab of tabs'>
+    <ng-template mat-tab-label >
+      <div (click)="removeTab(tab, $event)">
+        <span>{{tab.label}}</span><mat-icon >{{tab.icon}}</mat-icon>
+      </div>
+    </ng-template>
+
+    <div>
+      <mat-list>
+        <h3 mat-subheader>Folders</h3>
+        <mat-list-item >
+          <mat-icon mat-list-icon>folder</mat-icon>
+          <h4 mat-line>Name</h4>
+          <p mat-line> Date </p>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <h3 mat-subheader>Notes</h3>
+      </mat-list>
+
+      <mat-card style="margin: 50px">
+        <mat-card-header>
+          <div mat-card-avatar style="background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg'); background-size: cover;"></div>
+          <mat-card-title>Title</mat-card-title>
+        </mat-card-header>
+      </mat-card>
+
+    </div>
+  </mat-tab>
+</mat-tab-group>
+
+<mat-form-field class="example-full-width">
+  <input matInput placeholder="Favorite food" value="Sushi">
+</mat-form-field>

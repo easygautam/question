@@ -1,0 +1,21 @@
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+.root-container{
+  width:100%;
+  height: 100%;
+  margin: 0%;
+  padding: 0%;
+}
+
+.match-parent-height{
+  height: 100%;
+}
+
+.match-parent-width{
+  width: 100%;
+}
+
+.hidden{
+  display: none;
+}
+

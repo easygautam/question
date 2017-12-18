@@ -1,0 +1,27 @@
+<button mat-button routerLink="../add" class="row">
+  <mat-icon style="margin-right: 16px" >add</mat-icon>
+  New Question
+</button><br>
+
+<mat-card >
+
+  <mat-accordion>
+    <mat-expansion-panel *ngFor="let question of questions">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{question.question}}
+          <button mat-icon-button style="padding: 0px; margin: 0px; background: transparent;" (click)="deleteQuestion(question)">
+            <mat-icon >delete</mat-icon>
+          </button>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div>
+        <p class="option" *ngFor="let option of question.options; let i = index">{{option.optionEnglish }}</p>
+      </div>
+      <div>
+        <p class="ans" >Ans : {{question.answer.optionEnglish}}</p>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</mat-card>
+

@@ -1,0 +1,36 @@
+<mat-sidenav-container fullscreen>
+
+  <mat-sidenav #nav mode="slide" opened="false" class="mat-sidenav">
+    <button mat-button (click)="nav.toggle()" style="margin: 16px">
+      <div class="row">
+        <img [src]="defaultProfileIcon" class="col-" height="64" width="64">
+        <div class="col " style="margin-left: 16px">
+          <span class="row">User Name</span>
+          <span class="row">+919919759479</span>
+        </div>
+      </div>
+    </button><br>
+    <button mat-button routerLink="dashboard" (click)="nav.toggle()" class="row">
+      <mat-icon style="margin-right: 16px" >settings</mat-icon>
+      Dashboard
+    </button><br>
+    <button mat-button routerLink="question" (click)="nav.toggle()" class="row">
+      <mat-icon style="margin-right: 16px" >question_answer</mat-icon>
+      Question
+    </button><br>
+<!--    <button mat-button routerLink="manage-leads" (click)="nav.toggle()" >Manage Leads</button><br>
+    <button mat-button routerLink="view-leads" (click)="nav.toggle()" >View Leads</button><br>-->
+  </mat-sidenav>
+
+  <mat-toolbar color="primary">
+
+    <mat-toolbar-row>
+      <button mat-icon-button (click)="nav.toggle()"><mat-icon>menu</mat-icon></button>
+      <span style="margin-left: 16px">Home</span>
+    </mat-toolbar-row>
+
+  </mat-toolbar>
+
+  <router-outlet></router-outlet>
+
+</mat-sidenav-container>

@@ -1,0 +1,51 @@
+<div>
+  <div>
+
+  </div>
+</div>
+
+<mat-card class="form-container">
+  <mat-card-content>
+    <h4>Question</h4>
+    <div >
+      <mat-form-field class="match-parent-width">
+        <input matInput placeholder="Enter question" [(ngModel)]="question.question" required>
+      </mat-form-field>
+
+    </div>
+
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="form-container">
+  <mat-card-content>
+    <h4>Options</h4>
+    <div >
+
+      <mat-form-field class="match-parent-width" *ngFor="let option of question.options; let i = index" [attr.data-index]="i" >
+        <input matInput placeholder="Option {{i+1}}" [(ngModel)]="question.options[i].optionEnglish" required>
+      </mat-form-field>
+
+    </div>
+
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="form-container">
+  <mat-card-content>
+    <h4>Choose Answer</h4>
+    <div >
+
+      <mat-radio-group [(ngModel)]="question.answer" class="radio-group">
+        <mat-radio-button *ngFor="let option of question.options; let i = index" [value]="option" class="radio-button" >
+          {{option.optionEnglish }}
+        </mat-radio-button>
+      </mat-radio-group>
+    </div>
+
+    <div >Your answer of question is: {{question.answer.optionEnglish}}</div>
+  </mat-card-content>
+</mat-card>
+<p *ngIf="errorText" class="error-text" >{{errorText}}</p>
+
+<button mat-button color="danger"   (click)="sendQuestionToServer()" *ngIf="question.question && question.answer.optionEnglish">Send</button>

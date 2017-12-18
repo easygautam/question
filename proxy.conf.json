@@ -1,0 +1,10 @@
+{
+  "/api": {
+    "target": "http://leads.ihabitat.in",
+    "secure": false,
+    "pathRewrite": {
+      "^/api": ""
+    },
+    "changeOrigin": true
+  }
+}
